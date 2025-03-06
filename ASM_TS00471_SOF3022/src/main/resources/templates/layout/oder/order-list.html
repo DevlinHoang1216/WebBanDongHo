@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer Orders</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2 class="text-center">Customer Orders</h2>
+    <a class="btn btn-primary" th:href="@{/admin/order/create}">Create Order</a>
+    <a th:href="@{/home}" class="btn btn-dark">Back To Home</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Order Date</th>
+            <th>Order ID</th>
+            <th>User</th>
+            <th>Total Price</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${#temporals.format(order.createdAt, 'yyyy-MM-dd')}"></td>
+            <td th:text="'PROD-ORD-' + ${order.orderId}"></td>
+            <td th:text="${order.user.username}"></td>
+            <td th:text="${order.totalPrice}"></td>
+            <td th:text="${order.status}"></td>
+            <td>
+                <a class="btn btn-primary btn-sm" th:href="@{/admin/order/edit/{id}(id=${order.orderId})}">Edit</a>
+                <a class="btn btn-warning btn-sm" th:href="@{/order/detail/{id}(id=${order.orderId})}">Detail</a>
+                <a class="btn btn-danger btn-sm" th:href="@{/admin/order/delete/{id}(id=${order.orderId})}"
+                   onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
+
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

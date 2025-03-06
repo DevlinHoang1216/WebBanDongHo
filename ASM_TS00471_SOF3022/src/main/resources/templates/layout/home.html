@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
+    <link rel="stylesheet" href="/style/stylesheet.css">
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+      <div class="container">
+        <img src="/img/logofpt.jpg" alt="logofpt" width="120">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-flex justify-content-center px-5" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/product/list}">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/category/list}">Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/order/list}">Order</a>
+                </li>
+                <li class="nav-item">
+                    <div class="position-relative">
+                        <a class="nav-link" th:href="@{/cart}"><i class="fas fa-cart-shopping fa-2"></i>
+                            <span  class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger">3
+                                <span class="visually-hidden">items in cart</span>
+                            </span>
+                        </a>
+                    </div>
+
+                </li>
+
+            </ul>
+            <form th:action="@{/login}" method="get">
+                <button class="btn2" type="submit">Login</button>
+            </form>
+
+
+        </div>
+      </div>
+    </nav>
+</header>
+
+<section class="main">
+    <div class="container py-5">
+        <div class="row py-4">
+            <div class="col-lg-7 pt-5 text-sm-center">
+                <h1 class="pt-5">MUA ĐỒNG HỒ NGAY!</h1>
+                <button class="btn1 mt-5">BUY NOW</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="new">
+    <div class="container">
+        <div class="row justify-content-center text-center py-3">
+            <div class="col-lg-4 px-3">
+                <img src="/img/smartwatch-icon.png" class="img-fluid" width="210" alt="Smartwatch">
+                <h5>Smartwatch</h5>
+            </div>
+            <div class="col-lg-4 px-3">
+                <img src="/img/luxury-watch-icon.png" class="img-fluid" width="200" alt="Luxury Watch">
+                <h5>Luxury Watch</h5>
+            </div>
+            <div class="col-lg-4 px-3">
+                <img src="/img/digital-watch-icon.jpg" class="img-fluid"  width="200" alt="Digital Watch">
+                <h5>Digital Watch</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product">
+    <div class="container py-5">
+        <div class="row py-5">
+            <div class="col-lg-5 m-auto text-center" >
+                <h1>What's Trending</h1>
+                <h6 style="color: red">Luxury Watch For Your Life</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 text-center">
+                <div class="card border-0 bg-light mb-2">
+                    <div class="card-body">
+                        <img src="/img/luxury-watch1.png" width="300" class="img-fluid">
+                    </div>
+                    <h6>Rolex Datejust Watch 16200</h6>
+                    <p>$ 9,878.00</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="card border-0 bg-light mb-2">
+                    <div class="card-body">
+                        <img src="/img/luxury-watch5.png" width="300" class="img-fluid">
+                    </div>
+                    <h6>Rolex Day-Date 40</h6>
+                    <p>$ 61,995.00</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="card border-0 bg-light mb-2">
+                    <div class="card-body">
+                         <img src="/img/luxury-watch4.png" width="300" class="img-fluid">
+                    </div>
+                    <h6>Patek Philippe Nautilus 5711/1A-001</h6>
+                    <p>$ 95.00</p>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="card border-0 bg-light mb-2">
+                    <div class="card-body">
+                        <img src="/img/luxury-watch3.png" width="300" class="img-fluid">
+                    </div>
+                    <h6>Cartier Panthère</h6>
+                    <p>$ 4,690.00</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-lg-6 text-center m-auto">
+                        <button class="btn1">Click for more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                h1
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer fixed-bottom bg-dark text-light mt-auto py-3">
+    <div class="container text-center">
+        <p>&copy; Bài làm bởi Hoàng Văn Kiệt - TS00471, Môn học Java 5 - SOF3022, Kỳ học SPRING 2025</p>
+    </div>
+</footer>
+<script src="/js/script.js"></script>
+</body>
+</html>
